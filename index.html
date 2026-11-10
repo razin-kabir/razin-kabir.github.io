@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Razin Iqbal Kabir — Applied social science researcher</title>
+<meta name="description" content="Razin Iqbal Kabir: applied social science researcher with eleven years of policy research on food security, agricultural value chains and public health, mostly in Bangladesh. Based in Saskatoon.">
+<meta property="og:title" content="Razin Iqbal Kabir">
+<meta property="og:description" content="Policy research on food security, agricultural value chains and public health. Based in Saskatoon.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F5F3;
+    --paper-deep: #E6ECE9;
+    --ink: #15302E;
+    --ink-soft: #4A5E5B;
+    --water: #2F6B7E;
+    --water-light: #9DBDC6;
+    --straw: #C8901A;
+    --rule: #CFD9D5;
+    --serif: "Literata", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+    --measure: 66ch;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: var(--water); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  a:hover { text-decoration-color: var(--straw); text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--straw); outline-offset: 3px; border-radius: 2px; }
+
+  .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--paper); padding: .5rem 1rem; z-index: 20; }
+  .skip:focus { left: 1rem; top: 1rem; }
+
+  /* Top bar */
+  .bar {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: .9rem;
+  }
+  .bar-inner {
+    max-width: 1120px; margin: 0 auto; padding: .8rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .bar-name { font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.005em; }
+  .bar nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+  .bar nav a { color: var(--ink-soft); text-decoration: none; }
+  .bar nav a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--straw); }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Hero */
+  .hero { position: relative; padding: 5.5rem 0 4.5rem; overflow: hidden; }
+  .hero-text { position: relative; z-index: 1; max-width: 46rem; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.6rem, 7.4vw, 5.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0 0 1.6rem;
+  }
+  .hero h1 span { display: block; }
+  .lead { font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 1.55; max-width: 38rem; margin: 0 0 2rem; color: var(--ink); }
+  .place { font-family: var(--sans); font-size: .95rem; color: var(--ink-soft); margin: 0 0 2rem; }
+  .links { display: flex; flex-wrap: wrap; gap: .75rem; font-family: var(--sans); font-size: .95rem; }
+  .links a {
+    display: inline-block; padding: .55rem 1rem; border: 1px solid var(--ink);
+    color: var(--ink); text-decoration: none; border-radius: 999px; background: transparent;
+  }
+  .links a.primary { background: var(--ink); color: var(--paper); }
+  .links a:hover { background: var(--water); border-color: var(--water); color: #fff; }
+
+  .channels { position: absolute; right: -6%; top: 0; width: 62%; height: 100%; z-index: 0; pointer-events: none; }
+  .channels path { fill: none; stroke: var(--water-light); stroke-linecap: round; }
+  .channels .c1 { stroke-width: 2.2; }
+  .channels .c2 { stroke-width: 1.4; opacity: .8; }
+  .channels .c3 { stroke-width: 1; opacity: .6; }
+  .channels .silt { stroke: var(--straw); stroke-width: 1.6; opacity: .55; }
+  @media (prefers-reduced-motion: no-preference) {
+    .channels path { stroke-dasharray: 1600; stroke-dashoffset: 1600; animation: flow 2.8s cubic-bezier(.3,.1,.2,1) forwards; }
+    .channels .c2 { animation-delay: .25s; }
+    .channels .c3 { animation-delay: .5s; }
+    .channels .silt { animation-delay: .9s; animation-duration: 2.2s; }
+  }
+  @keyframes flow { to { stroke-dashoffset: 0; } }
+
+  /* Sections: heading hangs in the left column */
+  section.block { border-top: 1px solid var(--rule); padding: 3.5rem 0; }
+  .block-grid { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 2.5rem; }
+  .block h2 {
+    font-family: var(--sans); font-weight: 600; font-size: 1.05rem; letter-spacing: 0;
+    margin: .3rem 0 0; color: var(--ink);
+  }
+  .block-body { max-width: var(--measure); }
+  .block-body > p:first-child { margin-top: 0; }
+
+  /* About */
+  .about p { margin: 0 0 1.1rem; }
+
+  /* Projects */
+  .project { padding: 0 0 2.4rem; margin: 0 0 2.4rem; border-bottom: 1px solid var(--rule); }
+  .project:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+  .project h3 { font-family: var(--serif); font-weight: 600; font-size: 1.4rem; line-height: 1.25; letter-spacing: -0.01em; margin: 0 0 .35rem; }
+  .project .when { font-family: var(--sans); font-size: .88rem; color: var(--ink-soft); margin: 0 0 .9rem; }
+  .project p { margin: 0 0 1rem; }
+  .facts { display: grid; grid-template-columns: 6.5rem 1fr; gap: .35rem 1rem; margin: 0 0 1rem; font-family: var(--sans); font-size: .92rem; }
+  .facts dt { color: var(--ink-soft); }
+  .facts dd { margin: 0; }
+  .outputs { list-style: none; margin: 0; padding: 0; font-family: var(--sans); font-size: .92rem; display: flex; flex-wrap: wrap; gap: .4rem 1.3rem; }
+  .project.lead-project h3 { font-size: 1.75rem; }
+  .project.lead-project { position: relative; }
+  .tag-current { font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--ink); background: #F3E2B8; padding: .12rem .5rem; border-radius: 3px; margin-left: .4rem; vertical-align: .2em; }
+
+  /* Experience timeline */
+  .roles { list-style: none; margin: 0; padding: 0; }
+  .role { position: relative; padding: 0 0 2.2rem 1.6rem; border-left: 2px solid var(--rule); }
+  .role:last-child { padding-bottom: .2rem; }
+  .role::before { content: ""; position: absolute; left: -7px; top: .5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 2px solid var(--water); }
+  .role.now::before { background: var(--water); }
+  .role h3 { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; margin: 0; line-height: 1.3; }
+  .role .org { font-family: var(--sans); font-size: .93rem; margin: .2rem 0 .1rem; }
+  .role .when { font-family: var(--sans); font-size: .88rem; color: var(--ink-soft); margin: 0 0 .7rem; }
+  .role ul { margin: 0; padding-left: 1.1rem; }
+  .role li { margin: 0 0 .45rem; }
+  .role li::marker { color: var(--water); }
+
+  .edu { margin: 0; }
+  .edu div { margin: 0 0 1.2rem; }
+  .edu h3 { font-family: var(--serif); font-weight: 600; font-size: 1.1rem; margin: 0; }
+  .edu p { margin: .15rem 0 0; font-family: var(--sans); font-size: .93rem; color: var(--ink-soft); }
+
+  /* Publications */
+  .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.8rem; font-family: var(--sans); font-size: .88rem; }
+  .filters button {
+    font: inherit; color: var(--ink); background: transparent; border: 1px solid var(--rule);
+    padding: .35rem .8rem; border-radius: 999px; cursor: pointer;
+  }
+  .filters button:hover { border-color: var(--ink); }
+  .filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .filters .n { opacity: .65; margin-left: .25rem; }
+  .pubs { list-style: none; margin: 0; padding: 0; }
+  .pubs li { margin: 0 0 1.25rem; padding-left: 1rem; border-left: 3px solid transparent; font-size: 1rem; line-height: 1.6; }
+  .pubs li[data-type="journal"] { border-left-color: var(--water); }
+  .pubs li[hidden] { display: none; }
+  .pubs .kind { display: block; font-family: var(--sans); font-size: .8rem; color: var(--ink-soft); margin-bottom: .1rem; }
+  .pubs strong { font-weight: 600; }
+  .pubs .t { font-style: italic; }
+
+  /* Talks */
+  .talks { list-style: none; margin: 0; padding: 0; }
+  .talks li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; margin: 0 0 1.1rem; }
+  .talks .d { font-family: var(--sans); font-size: .88rem; color: var(--ink-soft); padding-top: .15rem; }
+  .talks .v { display: block; font-family: var(--sans); font-size: .9rem; color: var(--ink-soft); }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: 11rem 1fr; gap: .6rem 1.2rem; margin: 0; font-size: 1rem; }
+  .skills dt { font-family: var(--sans); font-size: .9rem; font-weight: 600; padding-top: .15rem; }
+  .skills dd { margin: 0; }
+
+  /* Contact */
+  .contact p { margin: 0 0 1rem; }
+  .contact-list { list-style: none; margin: 1.4rem 0 0; padding: 0; font-family: var(--sans); }
+  .contact-list li { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; padding: .7rem 0; border-top: 1px solid var(--rule); }
+  .contact-list li:last-child { border-bottom: 1px solid var(--rule); }
+  .contact-list span { color: var(--ink-soft); font-size: .92rem; }
+
+  footer { border-top: 1px solid var(--rule); padding: 2rem 0 3rem; font-family: var(--sans); font-size: .85rem; color: var(--ink-soft); }
+
+  @media (max-width: 820px) {
+    .bar nav { display: none; }
+    .hero { padding: 3.5rem 0 3rem; }
+    .channels { width: 100%; right: -30%; opacity: .55; }
+    .block-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    section.block { padding: 2.6rem 0; }
+    .facts, .talks li, .skills, .contact-list li { grid-template-columns: 1fr; gap: .1rem; }
+    .facts dd, .skills dd { margin-bottom: .5rem; }
+  }
+
+  @media print {
+    .bar, .channels, .links, .filters, .skip { display: none !important; }
+    body { background: #fff; font-size: 10.5pt; }
+    .hero { padding: 0 0 1rem; }
+    section.block { padding: 1rem 0; break-inside: auto; }
+    .pubs li[hidden] { display: block !important; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="bar-name" href="#top">Razin Iqbal Kabir</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#work">Selected work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <section class="hero" id="top" aria-labelledby="name">
+      <svg class="channels" viewBox="0 0 700 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path class="c1" d="M40 40 C 180 90, 160 200, 300 230 S 470 300, 520 400 S 640 500, 700 520"/>
+        <path class="c2" d="M300 230 C 360 190, 460 200, 520 150 S 640 90, 700 110"/>
+        <path class="c2" d="M520 400 C 470 450, 430 470, 400 520"/>
+        <path class="c3" d="M160 0 C 210 70, 240 120, 300 230"/>
+        <path class="c3" d="M460 290 C 540 300, 600 270, 700 290"/>
+        <path class="c3" d="M100 130 C 140 200, 120 300, 200 360 S 300 470, 330 520"/>
+        <path class="silt" d="M380 260 C 420 240, 470 250, 500 220"/>
+      </svg>
+      <div class="hero-text">
+        <h1 id="name"><span>Razin</span><span>Iqbal Kabir</span></h1>
+        <p class="lead">Applied social science researcher with eleven years of policy research on food security, agricultural value chains and public health, mostly in Bangladesh, using field surveys, impact evaluations and mixed methods.</p>
+        <p class="place">Saskatoon, Saskatchewan</p>
+        <div class="links">
+          <a class="primary" href="cv.pdf">Download CV (PDF)</a>
+          <a href="mailto:rkabir1989@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/razin-kabir-a4388933/">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=viXJojAAAAAJ&amp;hl=en">Google Scholar</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block about" aria-labelledby="about-h">
+      <div class="block-grid">
+        <h2 id="about-h">About</h2>
+        <div class="block-body">
+          <p>Most of my career has been at the International Food Policy Research Institute (IFPRI) in Dhaka, where I started as a Research Analyst in 2016 and left in 2026 as Senior Program Manager in the Poverty, Gender, and Inclusion Unit. Along the way I served as Deputy Chief of Party for the USAID-funded Feed the Future Bangladesh Research Activity and as Bangladesh Country Coordinator for CGIAR's Rethinking Food Markets Initiative.</p>
+          <p>I've worked on every stage of a study: design, protocols and ethics review, survey programming, managing survey firms across multiple rounds, data cleaning, and analysis using randomized controlled trials, difference-in-differences and panel methods. I've also done key informant interviews and focus group discussions with government and private sector stakeholders and with households in remote communities.</p>
+          <p>My training is in public health, with a Master of International Public Health and a Bachelor of Medical Science from the University of Sydney. I moved to Saskatoon in 2026 and continue to consult for IFPRI remotely.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="work" aria-labelledby="work-h">
+      <div class="block-grid">
+        <h2 id="work-h">Selected work</h2>
+        <div class="block-body">
+
+          <article class="project lead-project">
+            <h3>Clustering shrimp farms in southern Bangladesh</h3>
+            <p class="when">Difference-in-differences evaluation, Nov 2023 – Dec 2024</p>
+            <p>An evaluation of three shrimp cluster farming interventions and their effects on productivity and welfare outcomes for farmers in southern Bangladesh. I conducted the study and co-published the baseline, endline and follow-up survey datasets.</p>
+            <dl class="facts">
+              <dt>Method</dt><dd>Difference-in-differences with baseline, endline and follow-up survey rounds</dd>
+              <dt>Presented</dt><dd>32nd International Conference of Agricultural Economists (2024); IFPRI RISE Conference (2024)</dd>
+            </dl>
+            <ul class="outputs">
+              <li><a href="https://hdl.handle.net/10568/172964">Technical report</a></li>
+              <li><a href="https://hdl.handle.net/10568/174761">Policy note</a></li>
+              <li><a href="https://hdl.handle.net/10568/179366">Project note</a></li>
+              <li><a href="https://doi.org/10.7910/DVN/TUXYXQ">Baseline data</a></li>
+              <li><a href="https://doi.org/10.7910/DVN/VQJNLG">Endline data</a></li>
+              <li><a href="https://doi.org/10.7910/DVN/AYKN1Z">Follow-up data</a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>Discount vouchers for disease-free shrimp post-larvae</h3>
+            <p class="when">Randomized controlled trial, with Michigan State University</p>
+            <p>A field experiment testing whether discount vouchers get farmers in southern Bangladesh to adopt disease-free shrimp post-larvae.</p>
+            <dl class="facts">
+              <dt>Method</dt><dd>Randomized controlled trial</dd>
+            </dl>
+            <ul class="outputs">
+              <li><a href="https://hdl.handle.net/10568/178761">IFPRI working paper (2025)</a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>Fish and shrimp value chains after Covid-19</h3>
+            <p class="when">First-authored journal article, 2023</p>
+            <p>How the pandemic affected business continuity and resilience among fish and shrimp value chain actors in Bangladesh, based on two rounds of phone surveys with 1,751 value chain actors. Farm clusters turned out to be negatively correlated with resilience under covariate shocks. The study was part of a larger project on Covid-19 and value chains in Bangladesh, Burkina Faso and Uganda.</p>
+            <dl class="facts">
+              <dt>Published in</dt><dd>Applied Economic Perspectives and Policy 45(4)</dd>
+              <dt>Presented</dt><dd>31st ICAE (2021); 10th Sri Lankan Economic Research Conference (2022); AEPP South Asia Special Issue Conference, Kathmandu (2022)</dd>
+            </dl>
+            <ul class="outputs">
+              <li><a href="https://doi.org/10.1002/aepp.13356">Article</a></li>
+              <li><a href="https://bangladesh.ifpri.info/2023/06/blog-resilience-and-covid-19-insights-into-fish-and-shrimp-value-chains-in-bangladesh/">Blog post</a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>Census of Bangladesh's public foodgrain storage facilities</h3>
+            <p class="when">Led the census, 2017, under the Integrated Food Policy Research Program</p>
+            <p>A census of every public foodgrain storage facility in Bangladesh, assessing their condition and estimating repair needs. I later built and deployed an R Shiny dashboard that puts the census on a map with a searchable table of facilities. A companion working paper estimated grain losses in the public distribution system using primary survey and secondary data.</p>
+            <dl class="facts">
+              <dt>Built with</dt><dd>R Shiny, Leaflet</dd>
+              <dt>Funded by</dt><dd>World Bank, through a project of the Bangladesh Ministry of Food</dd>
+            </dl>
+            <ul class="outputs">
+              <li><a href="https://bifprp.shinyapps.io/StorageFacilityMap">Interactive map</a></li>
+              <li><a href="https://doi.org/10.2499/p15738coll2.133106">Census working paper</a></li>
+              <li><a href="https://doi.org/10.2499/p15738coll2.134542">Storage losses working paper</a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>Bangladesh Millers' and Traders' Survey</h3>
+            <p class="when">Survey executed in 2018</p>
+            <p>A nationally representative survey of the rice value chain. The data fed into estimates of private sector rice stocks and a stochastic spatial equilibrium model of how price stabilization policies affect the rice market.</p>
+            <ul class="outputs">
+              <li><a href="https://doi.org/10.2499/p15738coll2.134538">Private rice stocks paper</a></li>
+              <li><a href="https://hdl.handle.net/10568/141799">Price stabilization discussion paper</a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>Scaling for Impact: Aquatic Solutions Track <span class="tag-current">Current</span></h3>
+            <p class="when">IFPRI–WorldFish collaboration under CGIAR's Scaling for Impact Science Program</p>
+            <p>As IFPRI-Bangladesh focal point, I oversee three diagnostic consultancies on digital traceability for fish seed, standard operating procedures for hatcheries and nurseries, and access to finance in the aquaculture value chain. I'm also coordinating the design, protocols and rollout of a baseline survey of fish farmers across several high-production districts.</p>
+            <ul class="outputs">
+              <li><a href="https://hdl.handle.net/10568/186105">Solution track profile (2026)</a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>A farm management platform for soybean growers in India</h3>
+            <p class="when">Three-round panel, published 2025</p>
+            <p>An impact and process evaluation of a processor's use of a software-as-a-service platform among soybean farmers in Maharashtra.</p>
+            <ul class="outputs">
+              <li><a href="https://doi.org/10.21955/gatesopenres.1117249.1">Gates Open Research report</a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>Agricultural mechanization subsidies in Bangladesh</h3>
+            <p class="when">Policy assessment, 2025</p>
+            <p>An assessment of the Phase III mechanization subsidy program, with recommendations for reform, including for combine harvester subsidies.</p>
+            <ul class="outputs">
+              <li><a href="https://hdl.handle.net/10568/176065">Working paper</a></li>
+              <li><a href="https://hdl.handle.net/10568/178863">Policy note</a></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="experience" aria-labelledby="exp-h">
+      <div class="block-grid">
+        <h2 id="exp-h">Experience</h2>
+        <div class="block-body">
+          <ol class="roles">
+            <li class="role now">
+              <h3>Consultant</h3>
+              <p class="org">International Food Policy Research Institute (IFPRI)</p>
+              <p class="when">Sep 2026 – present, Saskatoon (remote)</p>
+              <ul>
+                <li>Project management support, continuing as IFPRI-Bangladesh focal point for the Aquatic Solutions Track of CGIAR's Scaling for Impact Science Program</li>
+                <li>Oversight of three diagnostic consultancies on digital traceability, hatchery and nursery SOPs, and access to finance</li>
+                <li>Study design, protocol development and rollout of a baseline survey of fish farmers in Bangladesh</li>
+              </ul>
+            </li>
+            <li class="role">
+              <h3>Senior Program Manager</h3>
+              <p class="org">IFPRI, Poverty, Gender, and Inclusion Unit</p>
+              <p class="when">Sep 2023 – Aug 2026, Dhaka</p>
+              <ul>
+                <li>Research management and quantitative and qualitative research on food systems, agricultural markets, rural development and public health</li>
+                <li>Deputy Chief of Party, USAID-funded Feed the Future Bangladesh Research Activity, until Jan 2025</li>
+                <li>Country Coordinator in Bangladesh for CGIAR's Rethinking Food Markets Initiative, Sep 2022 – Dec 2024</li>
+                <li>Co-authored an <a href="https://hdl.handle.net/10568/159466">overview of food security and nutrition in Bangladesh</a> (2024)</li>
+              </ul>
+            </li>
+            <li class="role">
+              <h3>Senior Research Analyst, previously Research Analyst</h3>
+              <p class="org">IFPRI</p>
+              <p class="when">Dec 2016 – Aug 2023, Dhaka</p>
+              <ul>
+                <li>First-authored a journal article on fish and shrimp value chain resilience after Covid-19</li>
+                <li>Executed the Bangladesh Millers' and Traders' Survey (2018) and led the public foodgrain storage census (2017) for the Integrated Food Policy Research Program</li>
+                <li>Co-authored working papers on rice stocks, price stabilization and grain storage losses</li>
+              </ul>
+            </li>
+            <li class="role">
+              <h3>Senior Research Associate</h3>
+              <p class="org">BRAC James P Grant School of Public Health, BRAC University</p>
+              <p class="when">Jul 2015 – Dec 2016, Dhaka</p>
+              <ul>
+                <li>Led a UNICEF-funded study on the prevalence and factors associated with nutritional outcomes among children under five</li>
+                <li>Co-authored a systematic review of autism spectrum disorders in South Asia and a study of tuberculosis mortality differentials</li>
+                <li>Contributed the equity analysis for a study of musculoskeletal disorders among garment factory workers</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h2 style="margin-top:3rem; margin-bottom:1rem;">Education</h2>
+          <div class="edu">
+            <div>
+              <h3>Master of International Public Health</h3>
+              <p>The University of Sydney, 2015</p>
+            </div>
+            <div>
+              <h3>Bachelor of Medical Science, Immunobiology</h3>
+              <p>The University of Sydney, 2014</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="publications" aria-labelledby="pub-h">
+      <div class="block-grid">
+        <h2 id="pub-h">Publications</h2>
+        <div class="block-body">
+          <div class="filters" role="group" aria-label="Filter publications by type">
+            <button type="button" data-filter="all" aria-pressed="true">All<span class="n"></span></button>
+            <button type="button" data-filter="journal" aria-pressed="false">Journal articles<span class="n"></span></button>
+            <button type="button" data-filter="paper" aria-pressed="false">Working and discussion papers<span class="n"></span></button>
+            <button type="button" data-filter="report" aria-pressed="false">Reports<span class="n"></span></button>
+            <button type="button" data-filter="brief" aria-pressed="false">Policy notes<span class="n"></span></button>
+            <button type="button" data-filter="data" aria-pressed="false">Datasets<span class="n"></span></button>
+            <button type="button" data-filter="blog" aria-pressed="false">Blogs<span class="n"></span></button>
+          </div>
+
+          <ol class="pubs" reversed>
+            <li data-type="brief"><span class="kind">Solution track profile</span>Khondker, M.E.J., H. Ali, <strong>R. Kabir</strong>, F.O. Otieno, and E. Nzuki. 2026. <a class="t" href="https://hdl.handle.net/10568/186105">Scaling delivery systems for carp, tilapia, and small indigenous species genetics and input services in Bangladesh.</a> CGIAR Scaling for Impact Science Program.</li>
+            <li data-type="data"><span class="kind">Dataset</span>IFPRI. 2026. <a class="t" href="https://doi.org/10.7910/DVN/AYKN1Z">Clustering for Global Market Access in Bangladesh: Follow-up Phone Survey.</a> Harvard Dataverse.</li>
+            <li data-type="paper"><span class="kind">Working paper</span>Bin Khaled, M.N., M.K. Maredia, S. Narayanan, B. Belton, and <strong>R.I. Kabir</strong>. 2025. <a class="t" href="https://hdl.handle.net/10568/178761">Nudging farmers toward disease-free shrimp technology with financial incentives: Experimental evidence from Bangladesh.</a> IFPRI Working Paper.</li>
+            <li data-type="paper"><span class="kind">Working paper</span>Bakhtiar, M.M., M.M. Mahzab, M.A. Karim, R. Shamma, B. Belton, M.R.A. Talukder, <strong>R. Kabir</strong>, and A.U. Ahmed. 2025. <a class="t" href="https://hdl.handle.net/10568/176065">Agricultural mechanization policy in Bangladesh: An assessment of the Phase III mechanization subsidy program, and recommendations for reform.</a> Climate Change x Agriculture Working Paper 1.</li>
+            <li data-type="report"><span class="kind">Report</span>Narayanan, S., A. Gautam, K. Raghunathan, R. Sayyad, M. Al-Hasan, N. Shaima, and <strong>R. Kabir</strong>. 2025. <a class="t" href="https://doi.org/10.21955/gatesopenres.1117249.1">CropIn impact and process evaluation: A case study of a processor's use of the SaaS platform.</a> Gates Open Research 9: 99.</li>
+            <li data-type="brief"><span class="kind">Project note</span>Narayanan, S., A.Z. Sakil, <strong>R. Kabir</strong>, M. Redoy, and B. Belton. 2025. <a class="t" href="https://hdl.handle.net/10568/179366">Life after a cluster intervention: Insights from shrimp farming in Bangladesh.</a> IFPRI.</li>
+            <li data-type="brief"><span class="kind">Policy note</span>Bakhtiar, M.M., M.M. Mahzab, M.A. Karim, R. Shamma, B. Belton, M.R.A. Talukder, <strong>R. Kabir</strong>, S. Aravindakshan, T.J. Krupnik, and A.U. Ahmed. 2025. <a class="t" href="https://hdl.handle.net/10568/178863">Combine harvester subsidies and agricultural mechanization in Bangladesh: Recommendations for reform.</a> Climate Change x Agriculture Policy Note.</li>
+            <li data-type="brief"><span class="kind">Policy note</span><strong>Kabir, R.</strong>, B. Belton, S. Narayanan, A.Z. Sakil, A.H. Khan, and R. Hernandez. 2025. <a class="t" href="https://hdl.handle.net/10568/174761">Clustering shrimp farms in Bangladesh: A novel effort with mixed outcomes.</a> South Asia Policy Perspectives Policy Note 4.</li>
+            <li data-type="report"><span class="kind">Technical report</span>Narayanan, S., B. Belton, <strong>R. Kabir</strong>, A.Z. Sakil, A.H. Khan, and R. Hernandez. 2024. <a class="t" href="https://hdl.handle.net/10568/172964">The cluster panacea? An evaluation of three interventions in shrimp value chains in Bangladesh.</a> CGIAR Initiative on Rethinking Food Markets.</li>
+            <li data-type="paper"><span class="kind">Discussion paper</span>Minot, N., S. Hossain, <strong>R. Kabir</strong>, P. Dorosh, and S. Rashid. 2024. <a class="t" href="https://hdl.handle.net/10568/141799">Assessing the impact of rice price stabilization policies in Bangladesh: Results from a stochastic spatial equilibrium model.</a> IFPRI Discussion Paper 2252.</li>
+            <li data-type="paper"><span class="kind">Working paper</span>Dorosh, P.A., S. Mustafa, <strong>R.I. Kabir</strong>, and N.A. Shaima. 2024. <a class="t" href="https://hdl.handle.net/10568/149088">Foresight for food markets: Developing and implementing market forecasting methods/models.</a> IFPRP Working Paper 13.</li>
+            <li data-type="data"><span class="kind">Dataset</span>IFPRI. 2024. <a class="t" href="https://doi.org/10.7910/DVN/VQJNLG">Clustering for Global Market Access in Bangladesh: Endline Survey.</a> Harvard Dataverse.</li>
+            <li data-type="data"><span class="kind">Dataset</span>IFPRI. 2024. <a class="t" href="https://doi.org/10.7910/DVN/TUXYXQ">Clustering for Global Market Access in Bangladesh: Baseline Survey.</a> Harvard Dataverse.</li>
+            <li data-type="journal"><span class="kind">Journal article</span><strong>Kabir, R.I.</strong>, M.N. Bin Khaled, S. Narayanan, and S. Rashid. 2023. <a class="t" href="https://doi.org/10.1002/aepp.13356">Shocks and the determinants of resilience: Fish and shrimp value chains in Bangladesh after Covid-19.</a> Applied Economic Perspectives and Policy 45(4): 1835–1862.</li>
+            <li data-type="paper"><span class="kind">Initiative note</span><strong>Kabir, R.I.</strong>, S. Narayanan, B. Belton, R. Hernandez, and M.M. Haque. 2023. <a class="t" href="https://doi.org/10.2499/p15738coll2.136869">Shrimp value chains in Bangladesh: A scoping study of possible research interventions.</a> CGIAR Rethinking Food Markets, Initiative Note 8.</li>
+            <li data-type="blog"><span class="kind">Blog</span><strong>Kabir, R.I.</strong>, M.M. Haque, and S. Narayanan. 2023. <a class="t" href="https://www.cgiar.org/news-events/news/expert-consultation-workshop-shrimp-value-chain-in-bangladesh/">Expert Consultation Workshop: Shrimp Value Chain in Bangladesh.</a> CGIAR News.</li>
+            <li data-type="blog"><span class="kind">Blog</span><strong>Kabir, R.I.</strong>, S. Narayanan, N. Bin Khaled, and S. Rashid. 2023. <a class="t" href="https://bangladesh.ifpri.info/2023/06/blog-resilience-and-covid-19-insights-into-fish-and-shrimp-value-chains-in-bangladesh/">Resilience and Covid-19: Insights into fish and shrimp value chains in Bangladesh.</a> IFPRI Blog.</li>
+            <li data-type="paper"><span class="kind">Working paper</span>Minot, N., S. Hossain, <strong>R. Kabir</strong>, P. Dorosh, and S. Rashid. 2021. <a class="t" href="https://doi.org/10.2499/p15738coll2.134539">Rice price stabilization in Bangladesh: Assessing the impact of public farm-gate and consumer price stabilization policy instruments on the overall grain market.</a> IFPRP Working Paper 11.</li>
+            <li data-type="paper"><span class="kind">Working paper</span>Dorosh, P., N. Minot, <strong>R. Kabir</strong>, and S. Hossain. 2021. <a class="t" href="https://doi.org/10.2499/p15738coll2.134538">Private sector rice stocks in Bangladesh: Estimates from the Bangladesh Millers' and Traders' Survey (MATS) 2018.</a> IFPRP Working Paper 6.</li>
+            <li data-type="paper"><span class="kind">Working paper</span>Rashid, S., and <strong>R. Kabir</strong>. 2021. <a class="t" href="https://doi.org/10.2499/p15738coll2.134542">Public sector foodgrain storage losses in Bangladesh: An assessment of current losses and the identification of solutions to reduce them.</a> IFPRP Working Paper 5.</li>
+            <li data-type="paper"><span class="kind">Working paper</span><strong>Kabir, R.</strong>, M. Yunus, T. Hossain, and S. Rashid. 2019. <a class="t" href="https://doi.org/10.2499/p15738coll2.133106">Public food grain storage facilities in Bangladesh: An assessment of functionality, repair needs, and alternative usage.</a> IFPRP Working Paper 2.</li>
+            <li data-type="journal"><span class="kind">Journal article</span>Sarker, M., F. Homayra, L.B. Rawal, <strong>R. Kabir</strong>, A. Aftab, R. Bari, A. Dzokoto, E.B. Shargie, S. Islam, A. Islam, and A.H.M.M. Latif. 2018. <a class="t" href="https://doi.org/10.1111/tmi.13171">Urban-rural and sex differentials in tuberculosis mortality in Bangladesh: Results from a population-based survey.</a> Tropical Medicine and International Health 24(1): 109–115.</li>
+            <li data-type="journal"><span class="kind">Journal article</span>Hossain, M.D., A. Aftab, M.H. Al Imam, I. Mahmud, I.A. Chowdhury, <strong>R.I. Kabir</strong>, and M. Sarker. 2018. <a class="t" href="https://doi.org/10.1371/journal.pone.0200122">Prevalence of work-related musculoskeletal disorders (WMSDs) and ergonomic risk assessment among readymade garment workers of Bangladesh: A cross sectional study.</a> PLoS ONE 13(7): e0200122.</li>
+            <li data-type="journal"><span class="kind">Journal article</span>Hossain, M.D., H.U. Ahmed, M.M.J. Uddin, W.A. Chowdhury, M.S. Iqbal, <strong>R.I. Kabir</strong>, I.A. Chowdhury, A. Aftab, P.G. Datta, G. Rabbani, S.W. Hossain, and M. Sarker. 2017. <a class="t" href="https://doi.org/10.1186/s12888-017-1440-x">Autism Spectrum Disorders (ASD) in South Asia: A systematic review.</a> BMC Psychiatry 17: 281.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="talks" aria-labelledby="talks-h">
+      <div class="block-grid">
+        <h2 id="talks-h">Conference presentations</h2>
+        <div class="block-body">
+          <ol class="talks" reversed>
+            <li><span class="d">Oct 2024</span><span>The cluster panacea? An evaluation of three interventions in shrimp value chains in Bangladesh<span class="v">IFPRI RISE Conference, Washington, DC</span></span></li>
+            <li><span class="d">Aug 2024</span><span>The cluster panacea: Shrimp farms in Bangladesh<span class="v">32nd International Conference of Agricultural Economists, New Delhi</span></span></li>
+            <li><span class="d">Oct 2022</span><span>Shocks and the determinants of resilience: Fish and shrimp value chains in Bangladesh after Covid-19<span class="v">AEPP South Asia Special Issue Conference, Kathmandu</span></span></li>
+            <li><span class="d">Jan 2022</span><span>Impacts of Covid-19, resilience and recovery: A study of rice, fish and shrimp value chains in Bangladesh<span class="v">10th Sri Lankan Economic Research Conference, Colombo</span></span></li>
+            <li><span class="d">Aug 2021</span><span>Impacts of Covid-19, resilience and recovery: A study of rice, fish and shrimp value chains in Bangladesh<span class="v">31st International Conference of Agricultural Economists (online)</span></span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="skills" aria-labelledby="skills-h">
+      <div class="block-grid">
+        <h2 id="skills-h">Skills</h2>
+        <div class="block-body">
+          <dl class="skills">
+            <dt>Statistical computing</dt><dd>Stata, R, Python and SPSS (proficient); PostgreSQL, SAS and MATLAB (intermediate)</dd>
+            <dt>Data visualization</dt><dd>Plotly, Altair, Matplotlib, Seaborn; R Shiny; Tableau; Power BI</dd>
+            <dt>Survey programming</dt><dd>SurveyCTO, ODK, KoboToolbox, Qualtrics</dd>
+            <dt>Geospatial</dt><dd>GeoPandas, Folium; ggplot, tmap, Leaflet, sf, terra; ArcGIS; QGIS</dd>
+            <dt>Qualitative</dt><dd>NVivo; key informant interviews and focus group discussions</dd>
+            <dt>Research ethics</dt><dd>Study protocols through IRB/ERC review for every study I've worked on; CITI Program certification in Social and Behavioral Research</dd>
+            <dt>Writing and tools</dt><dd>LaTeX, R Markdown, Zotero, Mendeley; VS Code, RStudio, PyCharm, Google Colab; Claude Code</dd>
+            <dt>Languages</dt><dd>English (fluent), Bengali (native), French (intermediate)</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="block contact" id="contact" aria-labelledby="contact-h">
+      <div class="block-grid">
+        <h2 id="contact-h">Contact</h2>
+        <div class="block-body">
+          <p>I'm based in Saskatoon and open to research, evaluation, policy and data roles in Saskatchewan and across Canada, and I can travel for work. Email is the best way to reach me.</p>
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:rkabir1989@gmail.com">rkabir1989@gmail.com</a></li>
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/razin-kabir-a4388933/">linkedin.com/in/razin-kabir-a4388933</a></li>
+            <li><span>Google Scholar</span><a href="https://scholar.google.com/citations?user=viXJojAAAAAJ&amp;hl=en">Publications and citations</a></li>
+            <li><span>CV</span><a href="cv.pdf">Download as PDF</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Razin Iqbal Kabir, Saskatoon. Last updated November 2026.</div>
+</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.filters button');
+    var items = document.querySelectorAll('.pubs li');
+    buttons.forEach(function (b) {
+      var f = b.getAttribute('data-filter');
+      var count = f === 'all' ? items.length : document.querySelectorAll('.pubs li[data-type="' + f + '"]').length;
+      b.querySelector('.n').textContent = count;
+      b.addEventListener('click', function () {
+        buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        items.forEach(function (li) { li.hidden = !(f === 'all' || li.getAttribute('data-type') === f); });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
