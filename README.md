@@ -1,10 +1,11 @@
 # Razin Iqbal Kabir — personal site
 
-Live at https://razin-kabir.github.io (GitHub Pages, served from `main`).
+Live at https://razinkabir.com (GitHub Pages, served from `main`; razin-kabir.github.io and www.razinkabir.com redirect there). The domain is registered with Cloudflare, which also hosts its DNS.
 
 ## Files
 
 - `index.html`: the whole site, with styles and script included. There's no build step.
+- `CNAME`: tells GitHub Pages to serve the site at razinkabir.com. Don't delete it.
 - `cv.pdf`: the public CV that the "Download CV" buttons serve. It has no street address, phone number or referees.
 
 ## How it's updated
