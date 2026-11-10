@@ -1,4 +1,4 @@
-# Razin Iqbal Kabir — personal site
+# Razin Kabir — personal site
 
 Live at https://razinkabir.com (GitHub Pages, served from `main`; razin-kabir.github.io and www.razinkabir.com redirect there). The domain is registered with Cloudflare, which also hosts its DNS.
 
