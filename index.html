@@ -163,7 +163,7 @@
     --photo-filter: brightness(.9) contrast(1.02);
     color-scheme: dark;
   }
-  :root.theme-fade body, :root.theme-fade .bar, :root.theme-fade .links a, :root.theme-fade .delta path, :root.theme-fade .delta circle {
+  :root.theme-fade body, :root.theme-fade .bar, :root.theme-fade .links a, :root.theme-fade .delta path {
     transition: background-color .8s ease, color .8s ease, border-color .8s ease, stroke .8s ease;
   }
 
@@ -242,8 +242,7 @@
   .links a.primary { background: var(--ink); color: var(--paper); }
   .links a:hover { background: var(--water); border-color: var(--water); color: var(--on-water); }
 
-  /* Background: the rivers and coastline of southern Bangladesh's delta (Natural Earth data),
-     with a small cluster of dots for the shrimp farm clusters near Khulna */
+  /* Background: the rivers and coastline of southern Bangladesh's delta (Natural Earth data) */
   .delta { position: absolute; right: -7%; bottom: -3%; height: 114%; width: auto; max-width: 66%; z-index: 0; pointer-events: none;
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%), linear-gradient(0deg, #000 70%, transparent 100%); -webkit-mask-composite: source-in;
     mask-image: linear-gradient(90deg, transparent 0%, #000 42%), linear-gradient(0deg, #000 70%, transparent 100%); mask-composite: intersect; }
@@ -251,12 +250,10 @@
   .delta .c1 { stroke: var(--water-light); stroke-width: 1.9; }
   .delta .c2 { stroke: var(--water-light); stroke-width: 1.1; opacity: .8; }
   .delta .coast { stroke: var(--straw); stroke-width: .9; opacity: .45; }
-  .delta .farms circle { fill: var(--straw); opacity: .8; }
   @media (prefers-reduced-motion: no-preference) {
     .delta .c1, .delta .c2 { stroke-dasharray: 1; stroke-dashoffset: 1; animation: flow 2.6s cubic-bezier(.3,.1,.2,1) forwards; }
     .delta .c2 { animation-delay: .3s; }
     .delta .coast { animation: settle-coast 1.6s ease 1.5s both; }
-    .delta .farms { animation: settle 1.6s ease 1.8s both; }
   }
   @keyframes flow { to { stroke-dashoffset: 0; } }
   @keyframes settle { from { opacity: 0; } to { opacity: 1; } }
@@ -443,7 +440,6 @@
       <path class="coast" d="M491.6,391.0 491.6,391.0Z"/>
       <path class="coast" d="M458.3,364.3 458.3,364.3Z"/>
       <path class="coast" d="M461.2,306.0 461.2,306.0Z"/>
-      <g class="farms"><circle cx="266.2" cy="462.9" r="2.2"/><circle cx="272.1" cy="461.8" r="2.2"/><circle cx="270.0" cy="465.9" r="2.2"/><circle cx="261.4" cy="467.9" r="2.2"/><circle cx="261.1" cy="466.9" r="2.2"/><circle cx="261.7" cy="462.1" r="2.2"/><circle cx="268.0" cy="472.4" r="2.2"/><circle cx="262.6" cy="463.9" r="2.2"/><circle cx="271.7" cy="474.1" r="2.2"/></g>
       </svg>
       <div class="hero-grid">
       <div class="hero-text">
