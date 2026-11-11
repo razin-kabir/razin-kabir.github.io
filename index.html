@@ -11,6 +11,121 @@
 <meta property="og:url" content="https://razinkabir.com/">
 <meta property="og:image" content="https://razinkabir.com/images/razin-kabir.jpg">
 <link rel="canonical" href="https://razinkabir.com/">
+<meta name="theme-color" content="#F2F5F3">
+<script>
+/* Theme follows the visitor's local sunrise and sunset. Location is approximated
+   from the browser's time zone, so no location permission is ever requested. */
+(function () {
+  var Z = {
+    "America/Regina":[50.45,-104.61],"America/Swift_Current":[50.29,-107.79],"America/Winnipeg":[49.9,-97.14],
+    "America/Edmonton":[53.55,-113.49],"America/Vancouver":[49.28,-123.12],"America/Toronto":[43.65,-79.38],
+    "America/Montreal":[45.5,-73.57],"America/Halifax":[44.65,-63.57],"America/St_Johns":[47.56,-52.71],
+    "America/Moncton":[46.09,-64.78],"America/Whitehorse":[60.72,-135.06],"America/Yellowknife":[62.45,-114.37],
+    "America/Iqaluit":[63.75,-68.52],"America/New_York":[40.71,-74.01],"America/Chicago":[41.88,-87.63],
+    "America/Denver":[39.74,-104.99],"America/Phoenix":[33.45,-112.07],"America/Los_Angeles":[34.05,-118.24],
+    "America/Anchorage":[61.22,-149.9],"Pacific/Honolulu":[21.31,-157.86],"America/Detroit":[42.33,-83.05],
+    "America/Mexico_City":[19.43,-99.13],"America/Bogota":[4.71,-74.07],"America/Lima":[-12.05,-77.04],
+    "America/Sao_Paulo":[-23.55,-46.63],"America/Argentina/Buenos_Aires":[-34.6,-58.38],"America/Santiago":[-33.45,-70.67],
+    "Europe/London":[51.51,-0.13],"Europe/Dublin":[53.35,-6.26],"Europe/Lisbon":[38.72,-9.14],"Europe/Paris":[48.86,2.35],
+    "Europe/Madrid":[40.42,-3.7],"Europe/Berlin":[52.52,13.4],"Europe/Amsterdam":[52.37,4.9],"Europe/Brussels":[50.85,4.35],
+    "Europe/Zurich":[47.38,8.54],"Europe/Rome":[41.9,12.5],"Europe/Vienna":[48.21,16.37],"Europe/Stockholm":[59.33,18.07],
+    "Europe/Oslo":[59.91,10.75],"Europe/Copenhagen":[55.68,12.57],"Europe/Helsinki":[60.17,24.94],"Europe/Warsaw":[52.23,21.01],
+    "Europe/Athens":[37.98,23.73],"Europe/Istanbul":[41.01,28.98],"Europe/Moscow":[55.76,37.62],"Africa/Cairo":[30.04,31.24],
+    "Africa/Lagos":[6.52,3.38],"Africa/Nairobi":[-1.29,36.82],"Africa/Johannesburg":[-26.2,28.05],"Africa/Ouagadougou":[12.37,-1.52],
+    "Africa/Kampala":[0.35,32.58],"Africa/Addis_Ababa":[9.03,38.74],"Asia/Dubai":[25.2,55.27],"Asia/Riyadh":[24.71,46.68],
+    "Asia/Tehran":[35.69,51.39],"Asia/Karachi":[24.86,67.01],"Asia/Kolkata":[22.57,88.36],"Asia/Calcutta":[22.57,88.36],
+    "Asia/Kathmandu":[27.72,85.32],"Asia/Dhaka":[23.81,90.41],"Asia/Colombo":[6.93,79.86],"Asia/Yangon":[16.87,96.2],
+    "Asia/Bangkok":[13.76,100.5],"Asia/Jakarta":[-6.2,106.85],"Asia/Singapore":[1.35,103.82],"Asia/Kuala_Lumpur":[3.14,101.69],
+    "Asia/Manila":[14.6,120.98],"Asia/Hong_Kong":[22.32,114.17],"Asia/Shanghai":[31.23,121.47],"Asia/Taipei":[25.03,121.57],
+    "Asia/Seoul":[37.57,126.98],"Asia/Tokyo":[35.68,139.69],"Australia/Perth":[-31.95,115.86],"Australia/Adelaide":[-34.93,138.6],
+    "Australia/Brisbane":[-27.47,153.03],"Australia/Sydney":[-33.87,151.21],"Australia/Melbourne":[-37.81,144.96],
+    "Pacific/Auckland":[-36.85,174.76]
+  };
+  var R = Math.PI / 180;
+  function place() {
+    var tz = "";
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
+    if (Z[tz]) return Z[tz];
+    var lng = -new Date().getTimezoneOffset() / 60 * 15;
+    var lat = /^(Australia|Antarctica)|Africa\/(Johannesburg|Maputo|Harare|Lusaka|Windhoek)|America\/(Sao_Paulo|Argentina|Santiago|Lima|Montevideo|La_Paz)|Pacific\/(Auckland|Fiji)/.test(tz) ? -30 : 40;
+    return [lat, lng];
+  }
+  // Sunrise or sunset (UTC ms) for a local calendar day; null for polar day/night.
+  function sunEvent(y, m, d, lat, lng, rising) {
+    var N = Math.round((Date.UTC(y, m, d) - Date.UTC(y, 0, 0)) / 864e5);
+    var lh = lng / 15, t = N + ((rising ? 6 : 18) - lh) / 24;
+    var M = 0.9856 * t - 3.289;
+    var L = (M + 1.916 * Math.sin(M * R) + 0.020 * Math.sin(2 * M * R) + 282.634 + 720) % 360;
+    var RA = (Math.atan(0.91764 * Math.tan(L * R)) / R + 720) % 360;
+    RA = (RA + Math.floor(L / 90) * 90 - Math.floor(RA / 90) * 90) / 15;
+    var sinD = 0.39782 * Math.sin(L * R), cosD = Math.cos(Math.asin(sinD));
+    var cosH = (Math.cos(90.833 * R) - sinD * Math.sin(lat * R)) / (cosD * Math.cos(lat * R));
+    if (cosH > 1) return { polar: "night" };
+    if (cosH < -1) return { polar: "day" };
+    var H = (rising ? 360 - Math.acos(cosH) / R : Math.acos(cosH) / R) / 15;
+    var UT = H + RA - 0.06571 * t - 6.622 - lh;
+    var noon = 12 - lh;  // hours from UTC midnight of this date
+    while (UT < noon - 12) UT += 24;
+    while (UT > noon + 12) UT -= 24;
+    if (rising && UT > noon) UT -= 24;
+    if (!rising && UT < noon) UT += 24;
+    return { at: Date.UTC(y, m, d) + UT * 3600e3 };
+  }
+  function sunState(now) {
+    var p = place(), y = now.getFullYear(), m = now.getMonth(), d = now.getDate();
+    var rise = sunEvent(y, m, d, p[0], p[1], true), set = sunEvent(y, m, d, p[0], p[1], false);
+    var t = now.getTime();
+    if (rise.polar || set.polar) {
+      var dark = (rise.polar || set.polar) === "night";
+      return { dark: dark, next: new Date(y, m, d + 1, 0, 1).getTime() };
+    }
+    if (t < rise.at) return { dark: true, next: rise.at };
+    if (t < set.at) return { dark: false, next: set.at };
+    var tm = new Date(y, m, d + 1), nr = sunEvent(tm.getFullYear(), tm.getMonth(), tm.getDate(), p[0], p[1], true);
+    return { dark: true, next: nr.at || tm.getTime() + 6 * 3600e3 };
+  }
+  function readOverride() {
+    try {
+      var o = JSON.parse(localStorage.getItem("theme-override") || "null");
+      if (o && o.until > Date.now()) return o.theme;
+      localStorage.removeItem("theme-override");
+    } catch (e) {}
+    return null;
+  }
+  function apply(theme) {
+    var root = document.documentElement;
+    root.setAttribute("data-theme", theme);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#0E1D1C" : "#F2F5F3");
+    var btn = document.querySelector(".theme-toggle");
+    if (btn) {
+      var other = theme === "dark" ? "light" : "dark";
+      btn.setAttribute("aria-label", "Switch to " + other + " theme");
+      btn.title = "Switch to " + other + " theme";
+    }
+  }
+  function current() {
+    var s = sunState(new Date()), o = readOverride();
+    return { theme: o || (s.dark ? "dark" : "light"), next: s.next };
+  }
+  window.siteTheme = {
+    apply: apply,
+    current: current,
+    toggle: function () {
+      var now = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      var c = current();
+      try { localStorage.setItem("theme-override", JSON.stringify({ theme: now, until: c.next })); } catch (e) {}
+      document.documentElement.classList.add("theme-fade");
+      apply(now);
+    },
+    refresh: function () {
+      var c = current(), root = document.documentElement;
+      if (root.getAttribute("data-theme") !== c.theme) { root.classList.add("theme-fade"); apply(c.theme); }
+    }
+  };
+  apply(current().theme);
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,9 +139,32 @@
     --water-light: #9DBDC6;
     --straw: #C8901A;
     --rule: #CFD9D5;
+    --tag-bg: #F3E2B8;
+    --on-water: #FFFFFF;
+    --photo-filter: none;
     --serif: "Literata", Georgia, "Times New Roman", serif;
     --sans: "Public Sans", "Helvetica Neue", Arial, sans-serif;
     --measure: 66ch;
+    color-scheme: light;
+  }
+
+  /* Night palette: the same pond and paddy colours after dark */
+  :root[data-theme="dark"] {
+    --paper: #0E1D1C;
+    --paper-deep: #142826;
+    --ink: #E4ECE8;
+    --ink-soft: #9DB1AC;
+    --water: #86BCCB;
+    --water-light: #2F5560;
+    --straw: #D6A646;
+    --rule: #233936;
+    --tag-bg: #3D3419;
+    --on-water: #0E1D1C;
+    --photo-filter: brightness(.9) contrast(1.02);
+    color-scheme: dark;
+  }
+  :root.theme-fade body, :root.theme-fade .bar, :root.theme-fade .links a, :root.theme-fade .channels path {
+    transition: background-color .8s ease, color .8s ease, border-color .8s ease, stroke .8s ease;
   }
 
   * { box-sizing: border-box; }
@@ -65,6 +203,17 @@
   .bar nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.4rem; flex-wrap: wrap; }
   .bar nav a { color: var(--ink-soft); text-decoration: none; }
   .bar nav a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--straw); }
+  .bar-right { display: flex; align-items: center; gap: 1.4rem; }
+  .theme-toggle {
+    display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem;
+    padding: 0; border: 1px solid var(--rule); border-radius: 999px; background: transparent; color: var(--ink-soft); cursor: pointer;
+  }
+  .theme-toggle:hover { color: var(--ink); border-color: var(--ink-soft); }
+  .theme-toggle svg { width: 1rem; height: 1rem; }
+  .theme-toggle .moon { display: none; }
+  :root[data-theme="dark"] .theme-toggle .sun { display: none; }
+  :root[data-theme="dark"] .theme-toggle .moon { display: block; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
 
@@ -73,7 +222,7 @@
   .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 46rem) auto; justify-content: space-between; align-items: start; gap: 3rem; }
   .hero-text { max-width: 46rem; }
   .portrait { margin: .9rem 0 0; width: clamp(12.5rem, 21vw, 17.5rem); }
-  .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; background: var(--paper-deep); }
+  .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; background: var(--paper-deep); filter: var(--photo-filter); }
   .hero h1 {
     font-family: var(--serif);
     font-weight: 500;
@@ -91,7 +240,7 @@
     color: var(--ink); text-decoration: none; border-radius: 999px; background: transparent;
   }
   .links a.primary { background: var(--ink); color: var(--paper); }
-  .links a:hover { background: var(--water); border-color: var(--water); color: #fff; }
+  .links a:hover { background: var(--water); border-color: var(--water); color: var(--on-water); }
 
   .channels { position: absolute; right: -6%; top: 0; width: 62%; height: 100%; z-index: 0; pointer-events: none; }
   .channels path { fill: none; stroke: var(--water-light); stroke-linecap: round; }
@@ -132,7 +281,7 @@
   .outputs { list-style: none; margin: 0; padding: 0; font-family: var(--sans); font-size: .92rem; display: flex; flex-wrap: wrap; gap: .4rem 1.3rem; }
   .project.lead-project h3 { font-size: 1.75rem; }
   .project.lead-project { position: relative; }
-  .tag-current { font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--ink); background: #F3E2B8; padding: .12rem .5rem; border-radius: 3px; margin-left: .4rem; vertical-align: .2em; }
+  .tag-current { font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--ink); background: var(--tag-bg); padding: .12rem .5rem; border-radius: 3px; margin-left: .4rem; vertical-align: .2em; }
 
   /* Experience timeline */
   .roles { list-style: none; margin: 0; padding: 0; }
@@ -204,6 +353,8 @@
   @media print {
     .bar, .channels, .links, .filters, .skip, .portrait { display: none !important; }
     body { background: #fff; font-size: 10.5pt; }
+    :root, :root[data-theme="dark"] { --paper: #fff; --ink: #15302E; --ink-soft: #4A5E5B; --water: #2F6B7E; --rule: #CFD9D5; --photo-filter: none; }
+    .theme-toggle { display: none !important; }
     .hero { padding: 0 0 1rem; }
     section.block { padding: 1rem 0; break-inside: auto; }
     .pubs li[hidden] { display: block !important; }
@@ -217,6 +368,7 @@
 <header class="bar">
   <div class="bar-inner">
     <a class="bar-name" href="#top">Razin Kabir</a>
+    <div class="bar-right">
     <nav aria-label="Sections">
       <ul>
         <li><a href="#work">Selected work</a></li>
@@ -226,6 +378,11 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <button type="button" class="theme-toggle" aria-label="Switch theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+    </button>
+    </div>
   </div>
 </header>
 
@@ -541,6 +698,15 @@
 </footer>
 
 <script>
+  (function () {
+    var t = window.siteTheme;
+    if (t) {
+      t.apply(document.documentElement.getAttribute('data-theme') || 'light');
+      document.querySelector('.theme-toggle').addEventListener('click', t.toggle);
+      setInterval(t.refresh, 60000);
+      document.addEventListener('visibilitychange', function () { if (!document.hidden) t.refresh(); });
+    }
+  })();
   (function () {
     var buttons = document.querySelectorAll('.filters button');
     var items = document.querySelectorAll('.pubs li');
