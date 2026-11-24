@@ -286,6 +286,18 @@
   .project.lead-project { position: relative; }
   .tag-current { font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--ink); background: var(--tag-bg); padding: .12rem .5rem; border-radius: 3px; margin-left: .4rem; vertical-align: .2em; }
 
+  /* Map previews: a static picture of each map that opens the live map */
+  .map-preview { display: block; max-width: 32rem; margin: 1.3rem 0 .35rem; color: var(--ink); text-decoration: none; }
+  .map-preview picture, .map-preview img { display: block; width: 100%; height: auto; }
+  .map-preview img { border: 1px solid var(--rule); border-radius: 4px; transition: border-color .15s; }
+  .map-preview:hover img, .map-preview:focus-visible img { border-color: var(--water); }
+  .map-preview-caption { display: inline-block; margin-top: .6rem; font-family: var(--sans); font-size: .92rem; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+  .map-preview:hover .map-preview-caption { border-bottom-color: var(--straw); }
+  .project p.map-credit { font-family: var(--sans); font-size: .8rem; color: var(--ink-soft); margin: .15rem 0 1.3rem; max-width: 32rem; }
+  .map-preview .map-dark { display: none; }
+  :root[data-theme="dark"] .map-preview .map-light { display: none; }
+  :root[data-theme="dark"] .map-preview .map-dark { display: block; }
+
   /* Experience timeline */
   .roles { list-style: none; margin: 0; padding: 0; }
   .role { position: relative; padding: 0 0 2.2rem 1.6rem; border-left: 2px solid var(--rule); }
@@ -354,6 +366,8 @@
   }
 
   @media print {
+    :root[data-theme="dark"] .map-preview .map-light { display: block; }
+    :root[data-theme="dark"] .map-preview .map-dark { display: none; }
     .bar, .delta, .links, .filters, .skip, .portrait { display: none !important; }
     body { background: #fff; font-size: 10.5pt; }
     :root, :root[data-theme="dark"] { --paper: #fff; --ink: #15302E; --ink-soft: #4A5E5B; --water: #2F6B7E; --rule: #CFD9D5; --photo-filter: none; }
@@ -472,6 +486,12 @@
             <h3>Bangladesh Millers' and Traders' Survey</h3>
             <p class="when">Survey executed in 2018</p>
             <p>A nationally representative survey of the rice value chain. Data fed into estimates of private sector rice stocks and a stochastic spatial equilibrium model of how price stabilization policies affect the rice market. Trader data used for a working paper on interlocked credit, and miller data for mapping surveyed rice mills in an interactive platform displaying 20 km hexagons. The code for both is public.</p>
+            <a class="map-preview" href="https://razinkabir.com/bangladesh-rice-mills-map/">
+              <picture class="map-light"><source srcset="images/rice-mills-map-light.webp" type="image/webp"><img src="images/rice-mills-map-light.jpg" width="1050" height="1020" loading="lazy" decoding="async" alt="Map of Bangladesh with the surveyed rice mills counted in 20 km hexagons, shaded from yellow (few mills) to purple (many)"></picture>
+              <picture class="map-dark"><source srcset="images/rice-mills-map-dark.webp" type="image/webp"><img src="images/rice-mills-map-dark.jpg" width="1050" height="1020" loading="lazy" decoding="async" alt="Map of Bangladesh with the surveyed rice mills counted in 20 km hexagons, shaded from yellow (few mills) to purple (many)"></picture>
+              <span class="map-preview-caption">Open the interactive map <span aria-hidden="true">&rarr;</span></span>
+            </a>
+            <p class="map-credit">Yellow: few surveyed mills; purple: many. Map data &copy; OpenStreetMap contributors.</p>
             <dl class="facts">
               <dt>Built with</dt><dd>Python (pandas, statsmodels, GeoPandas), Leaflet</dd>
             </dl>
@@ -507,6 +527,11 @@
             <h3>Census of Bangladesh's public foodgrain storage facilities</h3>
             <p class="when">Led the census, 2017, under the Integrated Food Policy Research Program</p>
             <p>A census of every public foodgrain storage facility in Bangladesh, assessing their condition and estimating repair needs. I later built and deployed an R Shiny dashboard that puts the census on a map with a searchable table of facilities. A companion working paper estimated grain losses in the public distribution system using primary survey and secondary data.</p>
+            <a class="map-preview" href="https://bifprp.shinyapps.io/StorageFacilityMap">
+              <picture><source srcset="images/storage-census-map.webp" type="image/webp"><img src="images/storage-census-map.jpg" width="1050" height="1020" loading="lazy" decoding="async" alt="Map of Bangladesh showing the public foodgrain storage facilities from the 2017 census, coloured by facility type and whether each is functional"></picture>
+              <span class="map-preview-caption">Open the interactive dashboard <span aria-hidden="true">&rarr;</span></span>
+            </a>
+            <p class="map-credit">The dashboard can take a few seconds to start. Source: IFPRI&ndash;BIDS&ndash;UIUC Public Storage Facilities Survey 2017. Map data &copy; OpenStreetMap contributors.</p>
             <dl class="facts">
               <dt>Built with</dt><dd>R Shiny, Leaflet</dd>
               <dt>Funded by</dt><dd>World Bank, through a project of the Bangladesh Ministry of Food</dd>
