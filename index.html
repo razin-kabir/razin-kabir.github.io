@@ -272,9 +272,6 @@
   .block-body { max-width: var(--measure); }
   .block-body > p:first-child { margin-top: 0; }
 
-  /* About */
-  .about p { margin: 0 0 1.1rem; }
-
   /* Projects */
   .project { padding: 0 0 2.4rem; margin: 0 0 2.4rem; border-bottom: 1px solid var(--rule); }
   .project:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
@@ -466,23 +463,29 @@
       </div>
     </section>
 
-    <section class="block about" aria-labelledby="about-h">
-      <div class="block-grid">
-        <h2 id="about-h">About</h2>
-        <div class="block-body">
-          <p>Most of my career has been at the International Food Policy Research Institute (IFPRI) in Dhaka, where I started as a Research Analyst in 2016 and left in 2026 as Senior Program Manager in the Poverty, Gender, and Inclusion Unit. Along the way I served as Deputy Chief of Party for the USAID-funded Feed the Future Bangladesh Research Activity and as Bangladesh Country Coordinator for CGIAR's Rethinking Food Markets Initiative.</p>
-          <p>I've worked on every stage of a study: design, protocols and ethics review, survey programming, managing survey firms across multiple rounds, data cleaning, and analysis using randomized controlled trials, difference-in-differences and panel methods. I've also done key informant interviews and focus group discussions with government and private sector stakeholders and with households in remote communities.</p>
-          <p>My training is in public health, with a Master of International Public Health and a Bachelor of Medical Science from the University of Sydney. I moved to Saskatoon in 2026 and continue to consult for IFPRI remotely.</p>
-        </div>
-      </div>
-    </section>
 
     <section class="block" id="work" aria-labelledby="work-h">
       <div class="block-grid">
         <h2 id="work-h">Selected work</h2>
         <div class="block-body">
-
           <article class="project lead-project">
+            <h3>Bangladesh Millers' and Traders' Survey</h3>
+            <p class="when">Survey executed in 2018</p>
+            <p>A nationally representative survey of the rice value chain. The data fed into estimates of private sector rice stocks and a stochastic spatial equilibrium model of how price stabilization policies affect the rice market. I've since used the trader data for a working paper on interlocked credit, and mapped the surveyed rice mills in an interactive map that counts them in 20 km hexagons so no mill's location is revealed. The code for both is public.</p>
+            <dl class="facts">
+              <dt>Built with</dt><dd>Python (pandas, statsmodels, GeoPandas), Leaflet</dd>
+            </dl>
+            <ul class="outputs">
+              <li><a href="https://doi.org/10.2499/p15738coll2.134538">Private rice stocks paper</a></li>
+              <li><a href="https://hdl.handle.net/10568/141799">Price stabilization discussion paper</a></li>
+              <li><a href="https://github.com/razin-kabir/interlocked-credit-bangladesh/blob/main/paper/main.pdf">Interlocked credit working paper (2026)</a></li>
+              <li><a href="https://razinkabir.com/bangladesh-rice-mills-map/">Interactive map of surveyed mills</a></li>
+              <li><a href="https://github.com/razin-kabir/bangladesh-rice-mills-map/tree/main/figures">Printable maps</a></li>
+              <li><a href="https://github.com/razin-kabir/interlocked-credit-bangladesh">Working paper code</a></li>
+              <li><a href="https://github.com/razin-kabir/bangladesh-rice-mills-map">Map code</a></li>
+            </ul>
+          </article>
+          <article class="project">
             <h3>Clustering shrimp farms in southern Bangladesh</h3>
             <p class="when">Difference-in-differences evaluation, Nov 2023 – Dec 2024</p>
             <p>An evaluation of three shrimp cluster farming interventions and their effects on productivity and welfare outcomes for farmers in southern Bangladesh. I conducted the study and co-published the baseline, endline and follow-up survey datasets.</p>
@@ -497,6 +500,21 @@
               <li><a href="https://doi.org/10.7910/DVN/TUXYXQ">Baseline data</a></li>
               <li><a href="https://doi.org/10.7910/DVN/VQJNLG">Endline data</a></li>
               <li><a href="https://doi.org/10.7910/DVN/AYKN1Z">Follow-up data</a></li>
+            </ul>
+          </article>
+
+          <article class="project">
+            <h3>Census of Bangladesh's public foodgrain storage facilities</h3>
+            <p class="when">Led the census, 2017, under the Integrated Food Policy Research Program</p>
+            <p>A census of every public foodgrain storage facility in Bangladesh, assessing their condition and estimating repair needs. I later built and deployed an R Shiny dashboard that puts the census on a map with a searchable table of facilities. A companion working paper estimated grain losses in the public distribution system using primary survey and secondary data.</p>
+            <dl class="facts">
+              <dt>Built with</dt><dd>R Shiny, Leaflet</dd>
+              <dt>Funded by</dt><dd>World Bank, through a project of the Bangladesh Ministry of Food</dd>
+            </dl>
+            <ul class="outputs">
+              <li><a href="https://bifprp.shinyapps.io/StorageFacilityMap">Interactive map</a></li>
+              <li><a href="https://doi.org/10.2499/p15738coll2.133106">Census working paper</a></li>
+              <li><a href="https://doi.org/10.2499/p15738coll2.134542">Storage losses working paper</a></li>
             </ul>
           </article>
 
@@ -527,39 +545,6 @@
           </article>
 
           <article class="project">
-            <h3>Census of Bangladesh's public foodgrain storage facilities</h3>
-            <p class="when">Led the census, 2017, under the Integrated Food Policy Research Program</p>
-            <p>A census of every public foodgrain storage facility in Bangladesh, assessing their condition and estimating repair needs. I later built and deployed an R Shiny dashboard that puts the census on a map with a searchable table of facilities. A companion working paper estimated grain losses in the public distribution system using primary survey and secondary data.</p>
-            <dl class="facts">
-              <dt>Built with</dt><dd>R Shiny, Leaflet</dd>
-              <dt>Funded by</dt><dd>World Bank, through a project of the Bangladesh Ministry of Food</dd>
-            </dl>
-            <ul class="outputs">
-              <li><a href="https://bifprp.shinyapps.io/StorageFacilityMap">Interactive map</a></li>
-              <li><a href="https://doi.org/10.2499/p15738coll2.133106">Census working paper</a></li>
-              <li><a href="https://doi.org/10.2499/p15738coll2.134542">Storage losses working paper</a></li>
-            </ul>
-          </article>
-
-          <article class="project">
-            <h3>Bangladesh Millers' and Traders' Survey</h3>
-            <p class="when">Survey executed in 2018</p>
-            <p>A nationally representative survey of the rice value chain. The data fed into estimates of private sector rice stocks and a stochastic spatial equilibrium model of how price stabilization policies affect the rice market. I've since used the trader data for a working paper on interlocked credit, and mapped the surveyed rice mills in an interactive map that counts them in 20 km hexagons so no mill's location is revealed. The code for both is public.</p>
-            <dl class="facts">
-              <dt>Built with</dt><dd>Python (pandas, statsmodels, GeoPandas), Leaflet</dd>
-            </dl>
-            <ul class="outputs">
-              <li><a href="https://doi.org/10.2499/p15738coll2.134538">Private rice stocks paper</a></li>
-              <li><a href="https://hdl.handle.net/10568/141799">Price stabilization discussion paper</a></li>
-              <li><a href="https://github.com/razin-kabir/interlocked-credit-bangladesh/blob/main/paper/main.pdf">Interlocked credit working paper (2026)</a></li>
-              <li><a href="https://razinkabir.com/bangladesh-rice-mills-map/">Interactive map of surveyed mills</a></li>
-              <li><a href="https://github.com/razin-kabir/bangladesh-rice-mills-map/tree/main/figures">Printable maps</a></li>
-              <li><a href="https://github.com/razin-kabir/interlocked-credit-bangladesh">Working paper code</a></li>
-              <li><a href="https://github.com/razin-kabir/bangladesh-rice-mills-map">Map code</a></li>
-            </ul>
-          </article>
-
-          <article class="project">
             <h3>Scaling for Impact: Aquatic Solutions Track <span class="tag-current">Current</span></h3>
             <p class="when">IFPRI–WorldFish collaboration under CGIAR's Scaling for Impact Science Program</p>
             <p>As IFPRI-Bangladesh focal point, I oversee three diagnostic consultancies on digital traceability for fish seed, standard operating procedures for hatcheries and nurseries, and access to finance in the aquaculture value chain. I'm also coordinating the design, protocols and rollout of a baseline survey of fish farmers across several high-production districts.</p>
@@ -586,7 +571,6 @@
               <li><a href="https://hdl.handle.net/10568/178863">Policy note</a></li>
             </ul>
           </article>
-
         </div>
       </div>
     </section>
