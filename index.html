@@ -294,6 +294,7 @@
   .map-preview-caption { display: inline-block; margin-top: .6rem; font-family: var(--sans); font-size: .92rem; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
   .map-preview:hover .map-preview-caption { border-bottom-color: var(--straw); }
   .project p.map-credit { font-family: var(--sans); font-size: .8rem; color: var(--ink-soft); margin: .15rem 0 1.3rem; max-width: 32rem; }
+  .map-preview.tall { max-width: 24rem; }
   .map-preview .map-dark { display: none; }
   :root[data-theme="dark"] .map-preview .map-light { display: none; }
   :root[data-theme="dark"] .map-preview .map-dark { display: block; }
@@ -509,6 +510,11 @@
             <h3>Clustering shrimp farms in southern Bangladesh</h3>
             <p class="when">Difference-in-differences evaluation, Nov 2023 – Dec 2024</p>
             <p>An evaluation of three shrimp cluster farming interventions and their effects on productivity and welfare outcomes for farmers in southern Bangladesh. I conducted the study and co-published the baseline, endline and follow-up survey datasets.</p>
+            <a class="map-preview tall" href="https://hdl.handle.net/10568/172964">
+              <picture><source srcset="images/shrimp-clusters-map.webp" type="image/webp"><img src="images/shrimp-clusters-map.jpg" width="800" height="1075" loading="lazy" decoding="async" alt="Map of Satkhira, Khulna and Bagerhat districts in southern Bangladesh, with the sampled shrimp farm clusters shown as circles sized by their annual shrimp production"></picture>
+              <span class="map-preview-caption">Read the technical report <span aria-hidden="true">&rarr;</span></span>
+            </a>
+            <p class="map-credit">Sampled clusters, shown as circles sized by annual bagda shrimp production. Figure 2 from Narayanan, Belton, Kabir et al. (2024), <cite>The cluster panacea?</cite>, CC BY 4.0.</p>
             <dl class="facts">
               <dt>Method</dt><dd>Difference-in-differences with baseline, endline and follow-up survey rounds</dd>
               <dt>Presented</dt><dd>32nd International Conference of Agricultural Economists (2024); IFPRI RISE Conference (2024)</dd>
