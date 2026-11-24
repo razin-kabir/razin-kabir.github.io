@@ -231,7 +231,7 @@
     letter-spacing: -0.025em;
     margin: 0 0 1.6rem;
   }
-  .hero h1 span { display: block; }
+  .hero h1 { white-space: nowrap; }
   .lead { font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 1.55; max-width: 38rem; margin: 0 0 2rem; color: var(--ink); }
   .place { font-family: var(--sans); font-size: .95rem; color: var(--ink-soft); margin: 0 0 2rem; }
   .links { display: flex; flex-wrap: wrap; gap: .6rem 1.9rem; font-family: var(--sans); font-size: .95rem; }
@@ -446,7 +446,7 @@
       </svg>
       <div class="hero-grid">
       <div class="hero-text">
-        <h1 id="name"><span>Razin</span><span>Kabir</span></h1>
+        <h1 id="name">Razin Kabir</h1>
         <p class="lead">Applied social science researcher with eleven years of policy research on food security, agricultural value chains and public health, mostly in Bangladesh, using field surveys, impact evaluations and mixed methods.</p>
         <p class="place">Saskatoon, Saskatchewan</p>
         <div class="links">
@@ -544,10 +544,18 @@
           <article class="project">
             <h3>Bangladesh Millers' and Traders' Survey</h3>
             <p class="when">Survey executed in 2018</p>
-            <p>A nationally representative survey of the rice value chain. The data fed into estimates of private sector rice stocks and a stochastic spatial equilibrium model of how price stabilization policies affect the rice market.</p>
+            <p>A nationally representative survey of the rice value chain. The data fed into estimates of private sector rice stocks and a stochastic spatial equilibrium model of how price stabilization policies affect the rice market. I've since used the trader data for a working paper on interlocked credit, and mapped the surveyed rice mills in an interactive map that counts them in 20 km hexagons so no mill's location is revealed. The code for both is public.</p>
+            <dl class="facts">
+              <dt>Built with</dt><dd>Python (pandas, statsmodels, GeoPandas), Leaflet</dd>
+            </dl>
             <ul class="outputs">
               <li><a href="https://doi.org/10.2499/p15738coll2.134538">Private rice stocks paper</a></li>
               <li><a href="https://hdl.handle.net/10568/141799">Price stabilization discussion paper</a></li>
+              <li><a href="https://github.com/razin-kabir/interlocked-credit-bangladesh/blob/main/paper/main.pdf">Interlocked credit working paper (2026)</a></li>
+              <li><a href="https://razinkabir.com/bangladesh-rice-mills-map/">Interactive map of surveyed mills</a></li>
+              <li><a href="https://github.com/razin-kabir/bangladesh-rice-mills-map/tree/main/figures">Printable maps</a></li>
+              <li><a href="https://github.com/razin-kabir/interlocked-credit-bangladesh">Working paper code</a></li>
+              <li><a href="https://github.com/razin-kabir/bangladesh-rice-mills-map">Map code</a></li>
             </ul>
           </article>
 
@@ -663,6 +671,7 @@
           <ol class="pubs" reversed>
             <li data-type="brief"><span class="kind">Solution track profile</span>Khondker, M.E.J., H. Ali, <strong>R. Kabir</strong>, F.O. Otieno, and E. Nzuki. 2026. <a class="t" href="https://hdl.handle.net/10568/186105">Scaling delivery systems for carp, tilapia, and small indigenous species genetics and input services in Bangladesh.</a> CGIAR Scaling for Impact Science Program.</li>
             <li data-type="data"><span class="kind">Dataset</span>IFPRI. 2026. <a class="t" href="https://doi.org/10.7910/DVN/AYKN1Z">Clustering for Global Market Access in Bangladesh: Follow-up Phone Survey.</a> Harvard Dataverse.</li>
+            <li data-type="paper"><span class="kind">Working paper</span><strong>Kabir, R.</strong> 2026. <a class="t" href="https://github.com/razin-kabir/interlocked-credit-bangladesh/blob/main/paper/main.pdf">Interlocked credit in agricultural commodity markets: Prevalence, structure, and market implications in Bangladesh's rice trading sector.</a> Working paper. <a href="https://github.com/razin-kabir/interlocked-credit-bangladesh">Code and replication files</a>.</li>
             <li data-type="paper"><span class="kind">Working paper</span>Bin Khaled, M.N., M.K. Maredia, S. Narayanan, B. Belton, and <strong>R.I. Kabir</strong>. 2025. <a class="t" href="https://hdl.handle.net/10568/178761">Nudging farmers toward disease-free shrimp technology with financial incentives: Experimental evidence from Bangladesh.</a> IFPRI Working Paper.</li>
             <li data-type="paper"><span class="kind">Working paper</span>Bakhtiar, M.M., M.M. Mahzab, M.A. Karim, R. Shamma, B. Belton, M.R.A. Talukder, <strong>R. Kabir</strong>, and A.U. Ahmed. 2025. <a class="t" href="https://hdl.handle.net/10568/176065">Agricultural mechanization policy in Bangladesh: An assessment of the Phase III mechanization subsidy program, and recommendations for reform.</a> Climate Change x Agriculture Working Paper 1.</li>
             <li data-type="report"><span class="kind">Report</span>Narayanan, S., A. Gautam, K. Raghunathan, R. Sayyad, M. Al-Hasan, N. Shaima, and <strong>R. Kabir</strong>. 2025. <a class="t" href="https://doi.org/10.21955/gatesopenres.1117249.1">CropIn impact and process evaluation: A case study of a processor's use of the SaaS platform.</a> Gates Open Research 9: 99.</li>
